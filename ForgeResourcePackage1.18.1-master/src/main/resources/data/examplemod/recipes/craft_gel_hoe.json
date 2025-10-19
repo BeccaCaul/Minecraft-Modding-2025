@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " xx",
+    " y ",
+    " y "
+  ],
+  "key": {
+    "x": {
+      "item": "examplemod:love"
+    },
+    "y": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "result": {
+    "item": "examplemod:gelhoe",
+    "count": 1
+  }
+}
+
