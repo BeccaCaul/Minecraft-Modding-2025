@@ -1,7 +1,6 @@
-// ─ MilkBucketProjectile.java ─
+// ─ WaterBucketProjectile.java ─
 package com.idtech.entity;
 
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -17,30 +16,30 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-public class MilkBucketProjectile extends ThrowableItemProjectile {
-    public static final String ID = "milk_bucket_projectile";
-    public static EntityType<MilkBucketProjectile> TYPE = (EntityType<MilkBucketProjectile>)
-            EntityType.Builder.<MilkBucketProjectile>of(
-                            (EntityType<MilkBucketProjectile> type, Level level) -> new MilkBucketProjectile(type, level),
+public class WaterBucketProjectile extends ThrowableItemProjectile {
+    public static final String ID = "water_bucket_projectile";
+    public static EntityType<WaterBucketProjectile> TYPE = (EntityType<WaterBucketProjectile>)
+            EntityType.Builder.<WaterBucketProjectile>of(
+                            (EntityType<WaterBucketProjectile> type, Level level) -> new WaterBucketProjectile(type, level),
                             MobCategory.MISC
                     )
                     .sized(0.25F, 0.25F)
                     .setTrackingRange(64)
                     .setUpdateInterval(10)
-                    .build("milk_bucket_projectile")
-                    .setRegistryName("examplemod", "milk_bucket_projectile");
+                    .build("water_bucket_projectile")
+                    .setRegistryName("examplemod", "water_bucket_projectile");
 
-    public MilkBucketProjectile(EntityType<? extends MilkBucketProjectile> type, Level level) {
+    public WaterBucketProjectile(EntityType<? extends WaterBucketProjectile> type, Level level) {
         super(type, level);
     }
 
-    public MilkBucketProjectile(Level level, LivingEntity shooter) {
+    public WaterBucketProjectile(Level level, LivingEntity shooter) {
         super(TYPE, shooter, level);
     }
 
     @Override
     protected Item getDefaultItem() {
-        return Items.MILK_BUCKET;
+        return Items.WATER_BUCKET;
     }
 
     @Override
@@ -62,7 +61,7 @@ public class MilkBucketProjectile extends ThrowableItemProjectile {
             // If target is a living entity, apply slowness effect for 3 seconds (60 ticks)
             if (target instanceof LivingEntity living) {
                 living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 1));
-                living.hurt(DamageSource.DROWN, 19);
+                living.hurt(DamageSource.DROWN, 5);
             }
 
             // Remove the projectile after hitting
@@ -77,7 +76,7 @@ public class MilkBucketProjectile extends ThrowableItemProjectile {
 
         if (!level.isClientSide) {
             BlockState state = level.getBlockState(result.getBlockPos());
-            // Extinguish fire if block is on fire (optional: more complex logic can be added here)
+            // Extinguish fire if block is on fire
             if (state.getBlock().isBurning(state, level, result.getBlockPos())) {
                 level.removeBlock(result.getBlockPos(), false);
             }
@@ -101,4 +100,3 @@ public class MilkBucketProjectile extends ThrowableItemProjectile {
         }
     }
 }
-

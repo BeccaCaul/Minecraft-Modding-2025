@@ -29,11 +29,11 @@ public class ItemMod {
             .build());
     public static Item yummyFoodItem = ItemUtils.buildFoodItem("sushi", yummyFood);
 
-    public static final Item MILK_GUN = new MilkGunItem(new Item.Properties()
+    public static final Item WATER_GUN = new WaterGunItem(new Item.Properties()
             .stacksTo(1)
             .durability(250)
             .tab(net.minecraft.world.item.CreativeModeTab.TAB_COMBAT))
-            .setRegistryName("idtech", "water_gun");
+            .setRegistryName("examplemod", "water_gun");
 
 
     @SubscribeEvent
@@ -64,7 +64,7 @@ public class ItemMod {
         event.getRegistry().register(CustomArmorItem.LEGS);
         event.getRegistry().register(CustomArmorItem.FEET);
 
-        event.getRegistry().register(MILK_GUN);
+        event.getRegistry().register(WATER_GUN);
 
 
         // MILK GUN

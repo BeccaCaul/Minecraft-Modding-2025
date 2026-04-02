@@ -13,7 +13,7 @@ public class EntityMod {
 
     @SubscribeEvent
     public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event){
-        event.getRegistry().register(MilkBucketProjectile.TYPE);
+        event.getRegistry().register(WaterBucketProjectile.TYPE);
         //Wolf
        event.getRegistry().register(CustomWolfEntity.TYPE);
        //wither
@@ -34,7 +34,7 @@ public class EntityMod {
     @SubscribeEvent
     public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(WhichEntity.TYPE, WhichRenderFactory.INSTANCE);
-        event.registerEntityRenderer(MilkBucketProjectile.TYPE,
+        event.registerEntityRenderer(WaterBucketProjectile.TYPE,
                 ctx -> new ThrownItemRenderer<>(ctx, 1.0f, false));
    //wolf
        event.registerEntityRenderer(CustomWolfEntity.TYPE, CustomWolfRenderFactory.INSTANCE);
