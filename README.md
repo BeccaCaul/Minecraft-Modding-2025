@@ -17,3 +17,4 @@ Evil pig:
 Custom textures:
 
 <img width="397" height="726" alt="minecraft textures" src="https://github.com/user-attachments/assets/0d13fd19-018a-43c3-b4de-91513be5f7c0" />
+![minecraft](https://github.com/user-attachments/assets/912939c5-2037-4af6-a2e6-f47558f5f092)
