@@ -14,7 +14,7 @@ Evil pig:
 ![evil pig](https://github.com/user-attachments/assets/9c00b016-404f-4082-b6d4-68fa3bb83291)
 
 
-Custom textures:
+## Custom textures:
 
 <img width="397" height="726" alt="minecraft textures" src="https://github.com/user-attachments/assets/0d13fd19-018a-43c3-b4de-91513be5f7c0" />
 
